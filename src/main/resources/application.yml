@@ -1,0 +1,56 @@
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/world?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: admin
+
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    lettuce:
+      pool:
+        max-active: 10
+        min-idle: 0
+        max-wait: -1ms
+        max-idle: 8
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: Asia/Shanghai
+
+
+server:
+  port: 8888
+  servlet:
+    context-path: /job
+
+
+
+
+mybatis:
+  mapper-locations: classpath*:mapper/**/*.xml
+
+logging:
+  level:
+    com:
+      lin:
+        mapper: debug
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+file:
+  #注意：结尾必须/
+  uploadFolder: /upload/
+  #注意：结尾必须**
+  accessPath: /upload/**
+  #注意：结尾必须/
+  baseUrl: http://localhost:8888/job/upload/

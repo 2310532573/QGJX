@@ -1,0 +1,5 @@
+com\luolin\JobApplication.class
+com\luolin\service\UserService.class
+com\luolin\controller\UserController.class
+com\luolin\mapper\UserMapper.class
+com\luolin\entity\User.class
