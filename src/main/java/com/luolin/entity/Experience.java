@@ -1,9 +1,11 @@
 package com.luolin.entity;
 
+import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import com.luolin.utils.Entity;
 import java.util.Date;
 
+@Data
 public class Experience extends Entity{
 
 	/**
@@ -53,52 +55,4 @@ public class Experience extends Entity{
 		this.resume = resume;
 	}
 
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getCompany() {
-		return company;
-	}
-	public void setCompany(String company) {
-		this.company = company;
-	}
-	public String getPost() {
-		return post;
-	}
-	public void setPost(String post) {
-		this.post = post;
-	}
-	public String getSalary() {
-		return salary;
-	}
-	public void setSalary(String salary) {
-		this.salary = salary;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public Date getJoinDate() {
-		return joinDate;
-	}
-	public void setJoinDate(Date joinDate) {
-		this.joinDate = joinDate;
-	}
-	public Date getLeaveDate() {
-		return leaveDate;
-	}
-	public void setLeaveDate(Date leaveDate) {
-		this.leaveDate = leaveDate;
-	}
-	public Integer getResumeId() {
-		return resumeId;
-	}
-	public void setResumeId(Integer resumeId) {
-		this.resumeId = resumeId;
-	}
 }

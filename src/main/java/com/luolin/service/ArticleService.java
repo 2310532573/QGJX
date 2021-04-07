@@ -8,59 +8,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-@Service
-public class ArticleService {
+public interface ArticleService {
 
-    @Autowired
-    private ArticleMapper articleMapper;
 
-    public int create(Article article) {
-        return articleMapper.create(article);
-    }
+    int create(Article article);
 
-    public int delete(String ids) {
-        String[] arr = ids.split(",");
-        int row = 0;
-        for (String s : arr) {
-            if(!StringUtils.isEmpty(s)){
-                articleMapper.delete(Integer.parseInt(s));
-            row++;
-            }
-        }
-        return row;
-    }
+    int delete(String ids);
 
-    public int delete(Integer id) {
-        return articleMapper.delete(id);
-    }
+    int delete(Integer id);
 
-    public int update(Article article) {
-        return articleMapper.update(article);
-    }
+    int update(Article article);
 
-    public int updateSelective(Article article) {
-        return articleMapper.updateSelective(article);
-    }
+    int updateSelective(Article article);
 
-    public PageInfo<Article> query(Article article) {
-        if(article != null && article.getPage() != null){
-            PageHelper.startPage(article.getPage(),article.getLimit());
-        }
-        return new PageInfo<Article>(articleMapper.query(article));
-    }
+    PageInfo<Article> query(Article article);
 
-    public Article detail(Integer id) {
-        return articleMapper.detail(id);
-    }
+    Article detail(Integer id);
 
-    public int count(Article article) {
-        return articleMapper.count(article);
-    }
+    int count(Article article);
 
-    public PageInfo<Article> getArticlesByChannelId(Article article){
-        if(article != null && article.getPage() != null){
-            PageHelper.startPage(article.getPage(),article.getLimit());
-        }
-        return new PageInfo<Article>(articleMapper.getArticlesByChannelId(article.getChannelId()));
-    }
+    PageInfo<Article> getArticlesByChannelId(Article article);
 }

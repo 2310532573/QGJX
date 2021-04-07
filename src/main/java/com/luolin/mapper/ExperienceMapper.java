@@ -3,7 +3,9 @@ package com.luolin.mapper;
 import java.util.List;
 
 import com.luolin.entity.Experience;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface ExperienceMapper {
 
 	public int create(Experience experience);

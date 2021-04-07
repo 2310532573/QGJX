@@ -3,21 +3,23 @@ package com.luolin.mapper;
 import java.util.List;
 
 import com.luolin.entity.Train;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface TrainMapper {
 
-	public int create(Train train);
+    int create(Train train);
 
-	public int delete(Integer id);
+    int delete(Integer id);
 
-	public int update(Train train);
+    int update(Train train);
 
-	public int updateSelective(Train train);
+    int updateSelective(Train train);
 
-	public List<Train> query(Train train);
+    List<Train> query(Train train);
 
-	public Train detail(Integer id);
+    Train detail(Integer id);
 
-	public int count(Train train);
+    int count(Train train);
 
 }

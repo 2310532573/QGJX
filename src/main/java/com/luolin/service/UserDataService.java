@@ -1,7 +1,7 @@
 package com.luolin.service;
 
-import com.luolin.framework.exception.TokenException;
-import com.luolin.framework.redis.RedisUtil;
+import com.luolin.common.exception.TokenException;
+import com.luolin.common.redis.RedisUtil;
 import com.luolin.utils.Status;
 import com.luolin.utils.UserThreadLocal;
 import com.luolin.vo.UserData;

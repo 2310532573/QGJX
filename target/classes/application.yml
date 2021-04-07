@@ -32,7 +32,13 @@ server:
 
 
 mybatis:
-  mapper-locations: classpath*:mapper/**/*.xml
+ mapper-locations: classpath:mapper/*.xml # mapper映射文件位置
+ type-aliases-package: com.luolin.entity # 实体类所在的位置
+ configuration:
+  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  #开启驼峰命名
+#  configuration:
+#    map-underscore-to-camel-case: true
 
 logging:
   level:
@@ -53,4 +59,4 @@ file:
   #注意：结尾必须**
   accessPath: /upload/**
   #注意：结尾必须/
-  baseUrl: http://localhost:8888/job/upload/
+  baseUrl: /upload/

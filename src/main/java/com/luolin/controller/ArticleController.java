@@ -1,8 +1,9 @@
 package com.luolin.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.luolin.common.annotation.LogAnnotation;
 import com.luolin.entity.Article;
-import com.luolin.framework.redis.RedisUtil;
+import com.luolin.common.redis.RedisUtil;
 import com.luolin.service.ArticleService;
 import com.luolin.utils.Result;
 import com.luolin.utils.UserThreadLocal;
@@ -23,6 +24,7 @@ public class ArticleController {
     private RedisUtil redisUtil;
 
     @PostMapping("create")
+    @LogAnnotation
     public Result create(@RequestBody Article article){
         String token = UserThreadLocal.get();
         UserData userData = (UserData) redisUtil.get(token);
@@ -37,6 +39,7 @@ public class ArticleController {
     }
 
     @GetMapping("delete")
+    @LogAnnotation
     public Result delete(String ids){
         int flag = articleService.delete(ids);
         if(flag>0){
@@ -47,6 +50,7 @@ public class ArticleController {
     }
 
     @PostMapping("update")
+    @LogAnnotation
     public Result update(@RequestBody Article article){
         int flag = articleService.update(article);
         if(flag>0){
@@ -57,11 +61,13 @@ public class ArticleController {
     }
 
     @GetMapping("detail")
+    @LogAnnotation
     public Result detail(Integer id){
         return  Result.ok(articleService.detail(id));
     }
 
     @PostMapping("query")
+    @LogAnnotation
     public Map<String,Object> query(@RequestBody  Article article){
         PageInfo<Article> pageInfo = articleService.query(article);
         return Result.ok(pageInfo);

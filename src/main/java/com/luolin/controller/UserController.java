@@ -2,8 +2,8 @@ package com.luolin.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.luolin.entity.User;
-import com.luolin.framework.role.RequiresRoles;
-import com.luolin.framework.role.Role;
+import com.luolin.common.role.RequiresRoles;
+import com.luolin.common.role.Role;
 import com.luolin.service.UserService;
 import com.luolin.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;

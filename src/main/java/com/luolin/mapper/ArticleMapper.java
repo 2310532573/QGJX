@@ -3,23 +3,25 @@ package com.luolin.mapper;
 import java.util.List;
 
 import com.luolin.entity.Article;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface ArticleMapper {
 
-	public int create(Article article);
+    int create(Article article);
 
-	public int delete(Integer id);
+    int delete(Integer id);
 
-	public int update(Article article);
+    int update(Article article);
 
-	public int updateSelective(Article article);
+    int updateSelective(Article article);
 
-	public List<Article> query(Article article);
+    List<Article> query(Article article);
 
-	public List<Article> getArticlesByChannelId(Integer channelId);
+    List<Article> getArticlesByChannelId(Integer channelId);
 
-	public Article detail(Integer id);
+    Article detail(Integer id);
 
-	public int count(Article article);
+    int count(Article article);
 
 }

@@ -3,21 +3,23 @@ package com.luolin.mapper;
 import java.util.List;
 
 import com.luolin.entity.Menu;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface MenuMapper {
 
-	public int create(Menu menu);
+	int create(Menu menu);
 
-	public int delete(Integer id);
+	int delete(Integer id);
 
-	public int update(Menu menu);
+	int update(Menu menu);
 
-	public int updateSelective(Menu menu);
+	int updateSelective(Menu menu);
 
-	public List<Menu> query(Menu menu);
+	List<Menu> query(Menu menu);
 
-	public Menu detail(Integer id);
+	Menu detail(Integer id);
 
-	public int count(Menu menu);
+	int count(Menu menu);
 
 }

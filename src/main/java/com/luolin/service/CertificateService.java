@@ -1,59 +1,23 @@
 package com.luolin.service;
 
-import com.luolin.mapper.CertificateMapper;
 import com.luolin.entity.Certificate;
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
-@Service
-public class CertificateService {
+public interface CertificateService {
 
-    @Autowired
-    private CertificateMapper certificateMapper;
+    int create(Certificate certificate);
 
-    public int create(Certificate certificate) {
-        return certificateMapper.create(certificate);
-    }
+    int delete(String ids);
 
-    public int delete(String ids) {
-        String[] arr = ids.split(",");
-        int row = 0;
-        for (String s : arr) {
-            if(!StringUtils.isEmpty(s)){
-                certificateMapper.delete(Integer.parseInt(s));
-            row++;
-            }
-        }
-        return row;
-    }
+    int delete(Integer id);
 
-    public int delete(Integer id) {
-        return certificateMapper.delete(id);
-    }
+    int update(Certificate certificate);
 
-    public int update(Certificate certificate) {
-        return certificateMapper.update(certificate);
-    }
+    int updateSelective(Certificate certificate);
 
-    public int updateSelective(Certificate certificate) {
-        return certificateMapper.updateSelective(certificate);
-    }
+    PageInfo<Certificate> query(Certificate certificate);
 
-    public PageInfo<Certificate> query(Certificate certificate) {
-        if(certificate != null && certificate.getPage() != null){
-            PageHelper.startPage(certificate.getPage(),certificate.getLimit());
-        }
-        return new PageInfo<Certificate>(certificateMapper.query(certificate));
-    }
+    Certificate detail(Integer id);
 
-    public Certificate detail(Integer id) {
-        return certificateMapper.detail(id);
-    }
-
-    public int count(Certificate certificate) {
-        return certificateMapper.count(certificate);
-    }
+    int count(Certificate certificate);
 }

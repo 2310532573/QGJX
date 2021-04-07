@@ -3,21 +3,23 @@ package com.luolin.mapper;
 import java.util.List;
 
 import com.luolin.entity.Dict;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface DictMapper {
 
-	public int create(Dict dict);
+    int create(Dict dict);
 
-	public int delete(Integer id);
+    int delete(Integer id);
 
-	public int update(Dict dict);
+    int update(Dict dict);
 
-	public int updateSelective(Dict dict);
+    int updateSelective(Dict dict);
 
-	public List<Dict> query(Dict dict);
+    List<Dict> query(Dict dict);
 
-	public Dict detail(Integer id);
+    Dict detail(Integer id);
 
-	public int count(Dict dict);
+    int count(Dict dict);
 
 }

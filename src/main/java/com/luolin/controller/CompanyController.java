@@ -2,7 +2,7 @@ package com.luolin.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.luolin.entity.Company;
-import com.luolin.framework.redis.RedisUtil;
+import com.luolin.common.redis.RedisUtil;
 import com.luolin.service.CompanyService;
 import com.luolin.utils.Result;
 import com.luolin.utils.UserThreadLocal;

@@ -3,21 +3,23 @@ package com.luolin.mapper;
 import java.util.List;
 
 import com.luolin.entity.Project;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface ProjectMapper {
 
-	public int create(Project project);
+	int create(Project project);
 
-	public int delete(Integer id);
+	int delete(Integer id);
 
-	public int update(Project project);
+	int update(Project project);
 
-	public int updateSelective(Project project);
+	int updateSelective(Project project);
 
-	public List<Project> query(Project project);
+	List<Project> query(Project project);
 
-	public Project detail(Integer id);
+	Project detail(Integer id);
 
-	public int count(Project project);
+	int count(Project project);
 
 }

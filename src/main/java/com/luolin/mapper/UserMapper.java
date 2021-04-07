@@ -3,21 +3,23 @@ package com.luolin.mapper;
 import java.util.List;
 
 import com.luolin.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface UserMapper {
 
-	public int create(User user);
+    int create(User user);
 
-	public int delete(Integer id);
+    int delete(Integer id);
 
-	public int update(User user);
+    int update(User user);
 
-	public int updateSelective(User user);
+    int updateSelective(User user);
 
-	public List<User> query(User user);
+    List<User> query(User user);
 
-	public User detail(Integer id);
+    User detail(Integer id);
 
-	public int count(User user);
+    int count(User user);
 
 }

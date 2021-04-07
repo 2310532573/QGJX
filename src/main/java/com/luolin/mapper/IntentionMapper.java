@@ -3,21 +3,23 @@ package com.luolin.mapper;
 import java.util.List;
 
 import com.luolin.entity.Intention;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface IntentionMapper {
 
-	public int create(Intention intention);
+    int create(Intention intention);
 
-	public int delete(Integer id);
+    int delete(Integer id);
 
-	public int update(Intention intention);
+    int update(Intention intention);
 
-	public int updateSelective(Intention intention);
+    int updateSelective(Intention intention);
 
-	public List<Intention> query(Intention intention);
+    List<Intention> query(Intention intention);
 
-	public Intention detail(Integer id);
+    Intention detail(Integer id);
 
-	public int count(Intention intention);
+    int count(Intention intention);
 
 }

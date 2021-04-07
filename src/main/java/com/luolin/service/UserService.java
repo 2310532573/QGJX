@@ -1,6 +1,6 @@
 package com.luolin.service;
 
-import com.luolin.framework.redis.RedisUtil;
+import com.luolin.common.redis.RedisUtil;
 import com.luolin.mapper.UserMapper;
 import com.luolin.entity.User;
 import com.github.pagehelper.PageHelper;

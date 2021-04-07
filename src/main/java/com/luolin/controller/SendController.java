@@ -4,15 +4,14 @@ import com.github.pagehelper.PageInfo;
 import com.luolin.common.annotation.LogAnnotation;
 import com.luolin.entity.Resume;
 import com.luolin.entity.Send;
-import com.luolin.framework.redis.RedisUtil;
-import com.luolin.framework.role.RequiresRoles;
-import com.luolin.framework.role.Role;
+import com.luolin.common.redis.RedisUtil;
+import com.luolin.common.role.RequiresRoles;
+import com.luolin.common.role.Role;
 import com.luolin.service.*;
 import com.luolin.utils.Result;
 import com.luolin.utils.UserThreadLocal;
 import com.luolin.vo.UserData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
