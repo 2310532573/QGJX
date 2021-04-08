@@ -1,6 +1,6 @@
 package com.luolin.common.exception.handel;
 
-import com.luolin.common.enums.ErrorCodeAndMsg;
+import com.luolin.common.enums.ErrorCodeEnum;
 import com.luolin.common.exception.AuthException;
 import com.luolin.common.exception.DatabaseException;
 import com.luolin.common.exception.TokenException;
@@ -34,7 +34,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public Result handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
         log.error("could_not_read_json...", e.getMessage());
-        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeAndMsg.NETWORK_ERROR.getMsg());
+        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeEnum.NETWORK_ERROR.getMsg());
     }
 
     /**
@@ -43,7 +43,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(AuthException.class)
     public Result handleAuthenticationException(AuthException e) {
         log.error("认证错误", e.getMessage());
-        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeAndMsg.USER_AUTH_ERROR.getMsg());
+        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeEnum.USER_AUTH_ERROR.getMsg());
     }
 
 
@@ -53,7 +53,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(TokenException.class)
     public Result handleAuthenticationException(TokenException e) {
         log.error("无效token", e.getMessage());
-        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeAndMsg.PARAM_TOKEN_NULL_ERROR.getMsg());
+        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeEnum.PARAM_TOKEN_NULL_ERROR.getMsg());
     }
 
     /**
@@ -62,7 +62,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler({MethodArgumentNotValidException.class})
     public Result handleValidationException(MethodArgumentNotValidException e) {
         log.error("parameter_validation_exception...", e);
-        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeAndMsg.NETWORK_ERROR.getMsg());
+        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeEnum.NETWORK_ERROR.getMsg());
     }
 
     /**
@@ -72,7 +72,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ValidationException.class)
     public Result handleValidationException(ValidationException e) {
         log.error("请求参数校验失败："+e.getMessage(), e);
-        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(),ErrorCodeAndMsg.NETWORK_ERROR.getMsg()+ e.getCause().getMessage());
+        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeEnum.NETWORK_ERROR.getMsg()+ e.getCause().getMessage());
     }
 
     /**
@@ -82,7 +82,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public Result handleHttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e) {
         log.error("request_method_not_supported...", e);
-        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeAndMsg.NETWORK_ERROR.getMsg());
+        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeEnum.NETWORK_ERROR.getMsg());
     }
 
     /**
@@ -92,7 +92,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler({HttpMediaTypeNotSupportedException.class})
     public Result handleHttpMediaTypeNotSupportedException(Exception e) {
         log.error("content_type_not_supported...", e);
-        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeAndMsg.NETWORK_ERROR.getMsg());
+        return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeEnum.NETWORK_ERROR.getMsg());
     }
 
     /**
@@ -117,7 +117,7 @@ public class GlobalExceptionHandler {
         log.error("事务锁异常！" + e);
         Result result = new Result();
         result.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
-        result.setMsg(ErrorCodeAndMsg.NETWORK_ERROR.getMsg());
+        result.setMsg(ErrorCodeEnum.NETWORK_ERROR.getMsg());
         return result;
     }
 
@@ -155,9 +155,9 @@ public class GlobalExceptionHandler {
         }
         Result result;
         if(flag) {
-            result = new Result(HttpStatus.UNAUTHORIZED.value(), ErrorCodeAndMsg.NETWORK_ERROR.getMsg());
+            result = new Result(HttpStatus.UNAUTHORIZED.value(), ErrorCodeEnum.NETWORK_ERROR.getMsg());
         }else {
-            result = new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeAndMsg.NETWORK_ERROR.getMsg());
+            result = new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(), ErrorCodeEnum.NETWORK_ERROR.getMsg());
         }
         return result;
 

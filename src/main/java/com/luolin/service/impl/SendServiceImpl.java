@@ -2,7 +2,7 @@ package com.luolin.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.luolin.common.enums.ErrorCodeAndMsg;
+import com.luolin.common.enums.ErrorCodeEnum;
 import com.luolin.common.exception.DatabaseException;
 import com.luolin.entity.Send;
 import com.luolin.mapper.SendMapper;
@@ -30,7 +30,7 @@ public class SendServiceImpl implements SendService {
                 try {
                     sendMapper.delete(Integer.parseInt(s));
                 }catch (Exception e){
-                    throw new DatabaseException("E00001", ErrorCodeAndMsg.DATA_DELETE_ERROR.getCode());
+                    throw new DatabaseException("E00001", ErrorCodeEnum.DATA_DELETE_ERROR.getCode());
                 }
             }
         }
@@ -46,7 +46,7 @@ public class SendServiceImpl implements SendService {
         try {
             sendMapper.update(send);
         }catch (Exception e){
-            throw new DatabaseException("E00001", ErrorCodeAndMsg.DATA_UPDATE_ERROR.getCode());
+            throw new DatabaseException("E00001", ErrorCodeEnum.DATA_UPDATE_ERROR.getCode());
         }
     }
 
