@@ -122,7 +122,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(value = DatabaseException.class)
-    public Result livegameExceptionExceptionHandler(DatabaseException e){
+    public Result DatabaseExceptionHandler(DatabaseException e){
         log.error(e.getErrContent());
         Result result = new Result();
         result.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
@@ -142,9 +142,6 @@ public class GlobalExceptionHandler {
     public Result exceptionHandler(Exception e) {
         log.error("捕获异常~",e);
         boolean flag = false;
-        //漏洞修补 No.3
-        //Remove this conditional structure or edit its code blocks so that they're not all the same.
-        //modified by shawn
         boolean methodSecurity = (e.getCause() != null
                 && e.getCause().getMessage().indexOf("org.springframework.security.access.expression.method.MethodSecurityExpressionRoot") != -1);
 
