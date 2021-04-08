@@ -5,7 +5,6 @@ public abstract class BaseException extends RuntimeException {
     protected String errCode;
     protected String errContent;
     protected String errInformation;
-    protected String siteCode;
 
     protected BaseException(String errCode, String errContent) {
         super(errContent);
@@ -18,7 +17,6 @@ public abstract class BaseException extends RuntimeException {
         this.errCode = errCode;
         this.errContent = errContent;
         this.errInformation = errInformation;
-        this.siteCode = siteCode;
     }
 
     public final String getErrCode() {
@@ -34,7 +32,4 @@ public abstract class BaseException extends RuntimeException {
         return this.errInformation;
     }
 
-    public final String getSiteCode() {
-        return this.siteCode;
-    }
 }

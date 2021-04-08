@@ -1,6 +1,7 @@
 package com.luolin.utils;
 
 import com.github.pagehelper.PageInfo;
+import org.springframework.http.HttpStatus;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +24,25 @@ public class Result {
         map.put("total",pageInfo.getTotal());
         map.put("data",pageInfo.getList());
         return map;
+    }
+
+    public Result()
+    {
+        this.code = HttpStatus.OK.value();
+        this.msg = "success";
+    }
+
+    public Result(Object data)
+    {
+        this.data = data;
+        this.code = HttpStatus.OK.value();
+        this.msg = "success";
+    }
+
+    public Result(int code, String msg)
+    {
+        this.code = code;
+        this.msg = msg;
     }
 
     public static Result ok(Object data) {
