@@ -15,9 +15,9 @@ public class GoogleCloudStorageConfiguration {
     //@Value("${google.ProjectId}")
     private String projectId;
 
-//    @Bean
-//    public Storage storage(){
-//        // 项目id = "your-project-id";
-//        return StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-//    }
+    //@Bean
+    public Storage storage(){
+        // 项目id = "your-project-id";
+        return StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+    }
 }

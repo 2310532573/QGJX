@@ -21,19 +21,19 @@ public class AwsConfiguration {
     private String secretKey;
 
 
-//    @Bean
-//    public AmazonS3 s3Client(){
-//        BasicAWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
-//        return AmazonS3ClientBuilder.standard()
-//                .withRegion(Regions.AP_SOUTHEAST_1)
-//                .withCredentials(new AWSStaticCredentialsProvider(credentials))
-//                .build();
-//    }
-//
-//    @Bean
-//    public TransferManager transferManager(AmazonS3 s3Client){
-//        return  TransferManagerBuilder.standard()
-//                .withS3Client(s3Client)
-//                .build();
-//    }
+    //@Bean
+    public AmazonS3 s3Client(){
+        BasicAWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
+        return AmazonS3ClientBuilder.standard()
+                .withRegion(Regions.AP_SOUTHEAST_1)
+                .withCredentials(new AWSStaticCredentialsProvider(credentials))
+                .build();
+    }
+
+    //@Bean
+    public TransferManager transferManager(AmazonS3 s3Client){
+        return  TransferManagerBuilder.standard()
+                .withS3Client(s3Client)
+                .build();
+    }
 }
