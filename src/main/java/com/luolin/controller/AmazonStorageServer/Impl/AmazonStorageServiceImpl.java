@@ -22,10 +22,10 @@ import java.util.UUID;
 @Service
 public class AmazonStorageServiceImpl implements AmazonStorageService {
 
-    @Value("${aws.filePath}")
+    //@Value("${aws.filePath}")
     private String filePath;
     private  String url = "https://{bucketName}.s3.{region}.amazonaws.com/{fileKey}";
-    @Resource
+    //@Resource
     private AmazonS3 s3Client;
 
     private static final String DOT = ".";

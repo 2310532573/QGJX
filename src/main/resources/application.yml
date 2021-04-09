@@ -59,3 +59,15 @@ file:
   accessPath: /upload/**
   #注意：结尾必须/
   baseUrl: /upload/
+
+aws:
+  accessKey: 111
+  secretKey: 222
+
+
+google:
+  ProjectId: QGJX
+  bucketName: QGJX
+  pathFile: /QGJX
+  downUrl: https://storage.googleapis.com/static-res
+  downUr2: https://storage.googleapis.com/static-res

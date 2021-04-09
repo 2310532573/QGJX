@@ -21,23 +21,23 @@ import java.util.UUID;
 @Service
 @Log4j2
 public class GoogleCloudStorageServiceImpl implements GoogleCloudStorageService {
-    @Resource
+    //@Resource
     private Storage storage;
     /**
      * 桶
      */
-    @Value("${google.bucketName}")
+    //@Value("${google.bucketName}")
     private String bucketName;
     /**
      * 文件路径
      */
-    @Value("${google.pathFile}")
+    //@Value("${google.pathFile}")
     private String pathFile;
 
-    @Value("${google.downUrl}")
+    //@Value("${google.downUrl}")
     private String downUrl;
 
-    @Value("${google.downUrl2}")
+    //@Value("${google.downUrl2}")
     private String downUrl2;
 
     private static final String DOT = ".";
