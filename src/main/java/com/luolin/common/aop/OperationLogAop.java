@@ -17,7 +17,7 @@ import java.lang.reflect.Method;
 @Component
 @Order(-1)
 @Log4j2
-public class LogAspect {
+public class OperationLogAop {
 
 
     //定义切点

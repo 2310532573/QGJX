@@ -17,7 +17,17 @@ public enum ErrorCodeEnum {
 
     PARAM_TOKEN_NULL_ERROR("888","未找到token信息"),
 
-    USER_AUTH_ERROR("9999","权限校验失败，请联系管理员")
+    USER_AUTH_ERROR("9999","权限校验失败，请联系管理员"),
+
+    GOOGLE_CLOUD_STORAGE_UPLOAD_ERROR("1099","google cloud storage上传失败"),
+
+    GOOGLE_CLOUD_STORAGE_ERROR("1404","google cloud storage异常"),
+
+    GOOGLE_CLOUD_STORAGE_DOWNLOAD_ERROR("1504","google cloud storage下载错误"),
+
+    GOOGLE_CLOUD_STORAGE_DELETE_ERROR("1999","google cloud storage删除失败"),
+
+    GOOGLE_CLOUD_STORAGE_NULL("1404","google cloud storage对象资源为空"),
     ;
 
 
